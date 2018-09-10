@@ -1,0 +1,16 @@
+@font-face{
+    src: url(fonts/premi/premi.ttf);
+    font-family: premi;
+}
+.log {
+    font-size: 70px;
+    line-height: 150px;
+    font-family: premi,serif;
+    font-weight: 1000;
+}
+#bklog {
+    font-size: 55px;
+   
+    font-family: premi,serif;
+    font-weight: 1000;
+}

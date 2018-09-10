@@ -1,0 +1,8 @@
+### emacs ###
+*~
+\#*\#
+
+# from jquery boilerplate
+npm-debug.log
+node_modules
+

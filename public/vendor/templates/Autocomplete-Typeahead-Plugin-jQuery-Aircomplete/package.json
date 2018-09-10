@@ -1,0 +1,42 @@
+{
+  "name": "jquery.aircomplete",
+  "version": "0.1.0",
+  "description": "A simple-ish autocomplete jquery plugin.",
+  "keywords": [
+    "jquery-plugin",
+    "jquery",
+    "autocomplete",
+    "aircomplete",
+    "plugins"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/airtightdesign/aircomplete.git"
+  },
+  "bugs": {
+    "url": "https://github.com/airtightdesign/aircomplete/issues"
+  },
+  "author": {
+    "name": "Airtight Design",
+    "email": "github@airtightdesign.com",
+    "url": "https://github.com/airtightdesign"
+  },
+  "homepage": "http://jqueryboilerplate.com",
+  "contributors": [
+    {
+      "name": "Josh Brown",
+      "email": "wjbrown@gmail.com",
+      "url": "https://github.com/wjbrown"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">=1.5.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-jscs": "^2.8.0"
+  }
+}

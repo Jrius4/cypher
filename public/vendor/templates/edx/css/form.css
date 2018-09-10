@@ -1,0 +1,31 @@
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid red;
+}
+footer{
+    background-color: black;
+}
+/**
+input[type=submit] {
+    background-color: #ed481e;
+    border: none;
+    color: white;
+    font-size: 10px;
+    width:auto;
+    padding: 0 0;
+    text-decoration: none;
+    margin: 0 0;
+    cursor: pointer;
+    border-radius:100px;
+}
+input[type=submit]:hover {
+    background-color: #f24515;
+}
+**/
+.form0{
+    background-color:#755b55;
+}

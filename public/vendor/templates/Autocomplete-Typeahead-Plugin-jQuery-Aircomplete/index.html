@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    
+    <meta charset="utf-8">
+    <title>jquery.aircomplete.js</title>
+  
+    <link rel="stylesheet" href="css/jquery.aircomplete.css"
+
+  </head>
+
+  <body>
+
+    <input aircomplete type="text" id="basic"/>
+    <input type="text" id="ajax">
+
+    <input aircomplete type="text" id="basic2"/>
+
+    
+    <script src="dist/jquery-1.12.4.min.js" ></script>
+    <script src="src/jquery.aircomplete.js"></script>
+    <script src="js/main.js"></script>
+<script>
+    $("#basic").aircomplete({
+      data: [
+        "Mercury",  "Vulcan",
+        "Venus",    "Earth",
+        "Mars",     "Counter-Earth",
+        "Ceres",    "Jupiter",
+        "Saturn",   "Uranus",
+        "Neptune",  "Planet X",
+        "Pluto",    "Nibiru"
+      ],
+      onSelect: function(data){
+        return data;
+      },
+      minSearchStringLength : 1 // show results after a single character is entered
+    });
+    $("#basic2").aircomplete({
+      data: [
+        "Mercury",  "Vulcan",
+        "Venus",    "Earth",
+        "Mars",     "Counter-Earth",
+        "Ceres",    "Jupiter",
+        "Saturn",   "Uranus",
+        "Neptune",  "Planet X",
+        "Pluto",    "Nibiru"
+      ],
+      onSelect: function(data){
+        return data;
+      },
+      minSearchStringLength : 1 // show results after a single character is entered
+    });
+</script>
+
+<script>
+    $("#ajax").aircomplete({
+  ajaxOptions: {
+     // url:      'https://swapi.co/api/planets',
+     url: 'src/swapi.co.json',
+      dataType: 'json', // or jsonp
+      method:   'GET'
+  },
+  dataKey: 'results',
+  template: function(element, searchTerm) {
+      var item = "";
+
+      item += "<div>";
+      item += "  " + element.name.replace(new RegExp('(' + searchTerm + ')', 'igm'), "<b>$1</b>");
+      item += "</div>";
+
+      return item;
+  },
+  match: function (dataRow, searchTerm) {
+      return dataRow.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+  },
+  searchDelay: 500,
+  minSearchStringLength : 1 // show results after a single character is entered
+});
+
+    
+</script>
+
+<script>
+    $("Selector").aircomplete({
+
+// how elements are matched against search text
+// only applies to non-ajax setup
+match: function(dataRow, searchTerm) {
+
+  return dataRow.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+
+},
+
+// how matches are formatted for the dropdown list
+template: function(dataRow, searchTerm) {
+  var html = dataRow;
+  var searchTerms = searchTerm.trim().split(" ");
+  for (var i = 0; i < searchTerms.length; i++) {
+    html = html.replace(new RegExp("(" + searchTerms[i] + ")", "igm"), "<strong>$1</strong>");
+  }
+  return html;
+},
+
+// defines what should happen if a user selects an item from the list
+// by default, triggered by both click and enter events
+// the value returned from this function will get set as the val() of the input
+// return false to leave the input val() unchanged
+onSelect: function(dataRow) {
+  return dataRow.name;
+},
+
+// should the list inherit styles from the input?
+inheritStyles: true,
+
+// minimum size of the search text before we start searching
+minSearchStringLength: 3,
+
+// maybe data is an object, maybe data is a static file
+data: [], // [] | "/path/to/static/file.json"
+
+// maybe we need to ajax in results
+ajaxOptions: {
+  // url: "http://yoursitehere.com/response.json",
+  dataType: "json", // or jsonp
+  method  : "GET"
+},
+
+// given a dataset, what is the path to the array?
+// useful when some APIs return {results: []} or {data: []}
+dataKey: '',
+
+// how many milliseconds should pass after a keystroke before we 
+// repopulate the list
+searchDelay: 200,
+
+// should the plugin cache ajax requests?
+cache: true,
+
+// debug for console output
+debug: false
+
+});
+
+    
+</script>
+    
+
+  </body>
+
+</html>
+
+
+

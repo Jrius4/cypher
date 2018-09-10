@@ -1,0 +1,9 @@
+@font-face{
+    src: url(champz/ChampzDEMO.ttf);
+    font-family: chamz;
+}
+.two{
+    font-family: chamz;
+    font-size: 0.677em;
+    line-height: 62px;
+}
